@@ -56,7 +56,7 @@ public class CSVReader {
         //System.out.println("1"+filepath);
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(CSV_FILE_PATH, true))) {
             writer.write(String.join(",", newRow));
-            writer.newLine();
+            //writer.newLine();
         }catch(IOException e){
             System.err.println(("Error appending dat: " + e.getMessage()));
             throw e;

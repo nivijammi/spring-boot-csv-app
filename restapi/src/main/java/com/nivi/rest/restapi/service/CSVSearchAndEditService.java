@@ -78,6 +78,7 @@ public class CSVSearchAndEditService {
         }
         // write updated data back to the CSV File
         if (updated) {
+            // remove an extra space that is being added to space
             csvReader.writeCSVData(CSV_FILE_PATH, data);
         }
         System.out.println("Update status: " + updated);
