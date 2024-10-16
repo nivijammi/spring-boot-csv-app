@@ -1,7 +1,12 @@
 # Stage 1: Build the application
-FROM maven:3.8.3-openjdk-17-slim AS build
-WORKDIR /home/app
-COPY . /home/app
+#FROM maven:3.8.3-openjdk-17-slim AS build
+#WORKDIR /home/app
+#COPY . /home/app
+#RUN mvn clean package
+
+FROM maven:3.6.0-jdk-11-slim AS build
+COPY src /home/app/src
+COPY pom.xml /home/app
 RUN mvn -f /home/app/pom.xml clean package
 
 # Stage 2: Run the application
